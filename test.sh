@@ -1,7 +1,7 @@
 #!/bin/bash
 EXIT_STATUS=0
 
-modules=("micronaut-data-jdbc-multiple-databases")
+modules=("micronaut-data-jdbc-multiple-databases" "micronaut-data-jpa-multiple-databases")
 
 for module in "${modules[@]}"; do
   cd "$module" || exit 1
