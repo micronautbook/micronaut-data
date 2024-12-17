@@ -11,7 +11,7 @@
         contents: read
       strategy:
         matrix:
-          module: [ 'micronaut-data-jdbc-multiple-databases', 'micronaut-data-jdbc-multiple-databases-jdbc-operations' 'micronaut-data-jpa-multiple-databases', 'micronaut-data-jdbc-multiple-databases-manual' ]
+          module: [ 'micronaut-data-jdbc-multiple-databases', 'micronaut-data-jdbc-multiple-databases-connection', 'micronaut-data-jdbc-multiple-databases-jdbc-operations', 'micronaut-data-jpa-multiple-databases', 'micronaut-data-jdbc-multiple-databases-manual' ]
       steps:
         - uses: actions/checkout@v4
         - name: Set up JDK 21
