@@ -1,26 +1,17 @@
-  Sure, I can help you refactor the GitHub Actions workflow to use a matrix strategy. This will allow you to run the build steps for each module in parallel.
-
-  Here is the updated `gradle.yml` file:
-
-    ```yaml
   name: Java CI with Gradle
-
   on:
     push:
       branches: [ "main" ]
     pull_request:
       branches: [ "main" ]
-
   jobs:
     build:
       runs-on: ubuntu-latest
       permissions:
         contents: read
-
       strategy:
         matrix:
           module: [ 'micronaut-data-jdbc-multiple-databases' ]
-
       steps:
         - uses: actions/checkout@v4
         - name: Set up JDK 21
@@ -28,9 +19,7 @@
           with:
             java-version: '21'
             distribution: 'temurin'
-
         - name: Setup Gradle
           uses: gradle/actions/setup-gradle@af1da67850ed9a4cedd57bfd976089dd991e2582 # v4.0.0
-
         - name: Build ${{ matrix.module }}
           run: cd ${{ matrix.module }}; ./gradlew build
